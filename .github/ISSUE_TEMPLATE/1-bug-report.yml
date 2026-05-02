@@ -7,31 +7,55 @@ body:
     attributes:
       value: |
         感谢您报告问题！为帮助维护者快速定位，请尽可能提供详细信息。
-        📌 提交前请确认：
-        - [ ] 已搜索现有 Issues，确认未重复报告
-        - [ ] 非临时性网络波动（建议等待 5-10 分钟后重试）
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我确认该问题非本地网络或代理导致
+        - label: 我已确认非临时性网络波动（建议等待 5-10 分钟后重试）
+        - label: 我已搜索现有 Issues，确认未重复报告
 
   - type: dropdown
     id: bug-type
     attributes:
       label: 问题类型
       options:
-        - 🔁 同步失败/中断
-        - 🔗 链接 404/无效
-        - 🔍 内容缺失/版本滞后
-        - 🛡️ 校验值不匹配 (Checksum mismatch)
-        - ⚡ 访问异常 (限速/403/502等)
-        - 📦 配置文件/索引错误
-        - ❓ 其他
+        - 官网网页异常
+        - 镜像同步失败
+        - 内容缺失/版本滞后
+        - 镜像源不可用
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproduce-frequency
+    attributes:
+      label: 复现频率
+      description: |
+        帮助维护者评估问题稳定性与排查优先级：
+        - 必现：每次执行相同操作均触发
+        - 高频：多次操作稳定出现（>50%）
+        - 偶发：随机出现，可能受网络/缓存/时段影响
+        - 仅一次/无法复现：提交后未再出现
+        - 需特定条件：依赖特定地域/客户端/参数/版本等
+      options:
+        - 必现（每次操作均触发）
+        - 高频（多次操作稳定复现）
+        - 偶发/间歇性（随机出现）
+        - 仅出现一次/无法复现
+        - 需特定条件（特定时间/网络/版本/参数等）
     validations:
       required: true
 
   - type: input
     id: mirror-name
     attributes:
-      label: 涉及镜像/项目名称
-      description: 出现问题的具体镜像路径或软件名
-      placeholder: 例: debian, ubuntu, pypi, github-release/kubernetes
+      label: 涉及镜像名称
+      description: 出现问题的具体镜像路径或镜像名
+      placeholder: 例: debian, ubuntu, pypi, github-release/microsoft_PowerToys
     validations:
       required: true
 
@@ -68,13 +92,12 @@ body:
     attributes:
       label: 客户端环境
       description: OS、浏览器版本、同步工具及版本等
-      placeholder: 例: Ubuntu 22.04, wget 1.21.3, Chrome 120
-
-  - type: checkboxes
-    id: checklist
+      placeholder: 例: Ubuntu 22.04, Chrome 120
+    validations:
+      required: true
+      
+  - type: input
+    id: anything-else
     attributes:
-      label: 确认事项
-      options:
-        - label: 我确认该问题非本地网络或代理导致
-        - label: 我理解镜像同步可能存在数小时延迟，非实时一致
-        - label: 我愿意配合维护者提供额外测试信息
+      label: 其他信息
+      description: 其它想要提供的信息
