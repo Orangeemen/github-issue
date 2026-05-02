@@ -1,7 +1,7 @@
 name: 解封/访问问题申请
 description: 申请 IP 解封、解除访问限制或咨询网络策略
 title: "[Access]: "
-labels: ["access-issue", "pending"]
+labels: ["access", "pending"]
 body:
   - type: markdown
     attributes:
