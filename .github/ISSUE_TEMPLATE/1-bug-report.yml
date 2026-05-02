@@ -23,12 +23,20 @@ body:
       label: 问题类型
       options:
         - 官网网页异常
-        - 镜像同步失败
         - 内容缺失/版本滞后
         - 镜像源不可用
         - 其他
     validations:
       required: true
+
+  - type: textarea
+    id: bug-type-other
+    attributes:
+      label: 其他问题说明
+      description: 仅当上方选择「其他」时填写，请详细描述您的问题
+      placeholder: 
+    validations:
+      required: false
 
   - type: dropdown
     id: reproduce-frequency
@@ -76,7 +84,7 @@ body:
     id: error-log
     attributes:
       label: 错误日志 / 状态码
-      description: 粘贴终端输出、浏览器网络面板信息或错误信息
+      description: 粘贴终端输出、浏览器错误信息
       render: shell
     validations:
       required: true
