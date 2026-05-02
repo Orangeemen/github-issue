@@ -1,102 +1,80 @@
-name: 🪞 新镜像申请
-description: 申请添加新的软件源镜像
-title: "[Mirror Request]: "
-labels: [new-mirror, pending]
+name: 🐛 故障/问题报告
+description: 报告镜像同步失败、访问异常、内容缺失或校验错误等问题
+title: "[Bug]: "
+labels: ["bug", "pending"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢提交镜像申请！请尽可能完整填写以下信息，帮助维护者高效评估。
-        
+        感谢您报告问题！为帮助维护者快速定位，请尽可能提供详细信息。
         📌 提交前请确认：
-        - [ ] 已搜索现有 issues，确认未重复申请
-        - [ ] 已阅读 [收录规则](./POLICY.md)
-        - [ ] 确认上游源允许镜像分发
-
-  - type: input
-    id: project-name
-    attributes:
-      label: 项目名称
-      description: 软件/项目的官方名称
-      placeholder: e.g. Debian, PyPI, Flutter SDK
-    validations:
-      required: true
-
-  - type: textarea
-    id: upstream-url
-    attributes:
-      label: 上游源地址
-      description: |
-        官方镜像地址或同步入口，优先提供：
-        - rsync:// 地址（首选）
-        - 官方推荐的同步方法文档链接
-        - HTTP/HTTPS 下载入口
-      placeholder: |
-        rsync://mirrors.example.com/project/
-        或 https://example.com/docs/mirroring
-    validations:
-      required: true
-
-  - type: textarea
-    id: project-intro
-    attributes:
-      label: 项目简介
-      description: 简要说明项目用途、目标用户、技术栈
-    validations:
-      required: true
-
-  - type: textarea
-    id: request-reason
-    attributes:
-      label: 申请理由
-      description: |
-        请说明：
-        1. 您/社区使用该项目的场景
-        2. 访问上游的痛点（速度/稳定性/地域限制等）
-        3. 预估用户受益范围
-    validations:
-      required: true
-
-  - type: input
-    id: estimated-size
-    attributes:
-      label: 预估存储占用
-      description: 如不确定可填"未知"，维护者会协助评估
-      placeholder: e.g. ~50GB, <10GB, 未知
+        - [ ] 已搜索现有 Issues，确认未重复报告
+        - [ ] 非临时性网络波动（建议等待 5-10 分钟后重试）
 
   - type: dropdown
-    id: sync-method
+    id: bug-type
     attributes:
-      label: 推荐的同步方式
+      label: 问题类型
       options:
-        - rsync（推荐）
-        - git clone / git lfs
-        - HTTP 递归下载（wget/curl）
-        - 官方同步工具（如 repo, aptly）
-        - GitHub API / gh-release
-        - 其他（请在下方说明）
+        - 🔁 同步失败/中断
+        - 🔗 链接 404/无效
+        - 🔍 内容缺失/版本滞后
+        - 🛡️ 校验值不匹配 (Checksum mismatch)
+        - ⚡ 访问异常 (限速/403/502等)
+        - 📦 配置文件/索引错误
+        - ❓ 其他
+    validations:
+      required: true
+
+  - type: input
+    id: mirror-name
+    attributes:
+      label: 涉及镜像/项目名称
+      description: 出现问题的具体镜像路径或软件名
+      placeholder: 例: debian, ubuntu, pypi, github-release/kubernetes
     validations:
       required: true
 
   - type: textarea
-    id: other-mirrors
+    id: reproduce-steps
     attributes:
-      label: 国内其他镜像站收录情况（选填）
-      description: |
-        如已知其他镜像站已收录，请列出：
-        - 清华大学: ✅/❌
-        - 中国科大: ✅/❌  
-        - 上海交大: ✅/❌
-        - 其他: ______
+      label: 复现步骤 / 访问方式
+      description: 请提供具体的命令、URL 或操作步骤
+      placeholder: |
+        示例：
+        1. 访问 https://mirrors.wonderfor.org/ubuntu/dists/jammy/...
+        2. 执行 apt update
+        3. 使用 wget 下载特定文件...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-log
+    attributes:
+      label: 错误日志 / 状态码
+      description: 粘贴终端输出、浏览器网络面板信息或截图
+      render: shell
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 预期行为
+      description: 正常情况下应该返回什么结果？
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 客户端环境
+      description: OS、浏览器版本、同步工具及版本等
+      placeholder: 例: Ubuntu 22.04, wget 1.21.3, Chrome 120
 
   - type: checkboxes
     id: checklist
     attributes:
       label: 确认事项
       options:
-        - label: 我确认该项目使用开源许可证，允许镜像分发
-          required: true
-        - label: 我确认上游源稳定可用，有持续维护
-          required: true
-        - label: 我理解镜像同步可能存在延迟，非实时一致
-          required: true
+        - label: 我确认该问题非本地网络或代理导致
+        - label: 我理解镜像同步可能存在数小时延迟，非实时一致
+        - label: 我愿意配合维护者提供额外测试信息
