@@ -32,7 +32,6 @@ body:
       description: 请清晰描述您的需求、建议或疑问。如有具体场景或案例，请一并提供。
       placeholder: |
         示例：
-        - 建议在同步失败时增加自动重试通知机制
         - 某镜像的使用文档已过时
     validations:
       required: true

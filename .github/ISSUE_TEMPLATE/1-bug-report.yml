@@ -76,16 +76,17 @@ body:
     id: error-log
     attributes:
       label: 错误日志 / 状态码
-      description: 粘贴终端输出、浏览器网络面板信息或截图
+      description: 粘贴终端输出、浏览器网络面板信息或错误信息
       render: shell
+    validations:
+      required: true
 
   - type: textarea
     id: expected-behavior
     attributes:
       label: 预期行为
       description: 正常情况下应该返回什么结果？
-    validations:
-      required: true
+
 
   - type: input
     id: environment
