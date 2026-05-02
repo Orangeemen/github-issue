@@ -29,12 +29,12 @@
 2. **新建 Issue**：选择模板 `新镜像申请`
 3. **填写完整信息**：帮助维护者高效评估
 
-[🔗 点击此处提交新申请](../../issues/new/choose)
+👉 [点击此处提交新申请](../../issues/new/choose)
 
 ### 申请 GitHub Release 镜像？
-如果您的目标是托管在 GitHub 的项目 Release 资产，请移步wonderful-github-releases仓库：
+如果您的目标是托管在 GitHub 的项目 Release ，请移步wonderful-github-releases仓库：
 
-[🔗转至GitHub Release仓库](https://github.com/SDU-Mirrors/wonderful-github-releases)
+👉 [转至GitHub Release仓库](https://github.com/SDU-Mirrors/wonderful-github-releases)
 
 ---
 
