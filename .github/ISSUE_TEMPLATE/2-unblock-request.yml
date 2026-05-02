@@ -1,0 +1,84 @@
+name: 🔓 解封/访问问题申请
+description: 申请 IP 解封、解除访问限制或咨询网络策略
+title: "[Access]: "
+labels: ["access-issue", "pending"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        若您的访问被限速或拦截，请提供以下信息以便维护者核查。
+        ⚠️ 请注意：本镜像站实施合理限速策略以保障服务稳定性。频繁超限或自动化滥用可能导致临时封禁。
+        📌 提交前请确认：
+        - [ ] 已检查本地网络/代理/防火墙设置
+        - [ ] 非因违反使用条款（如高频爬虫、DDoS式请求）导致
+
+  - type: dropdown
+    id: service-type
+    attributes:
+      label: 受影响的服务
+      options:
+        - 🌐 Web 浏览 / 文件下载 (HTTP/HTTPS)
+        - 🔁 RSYNC 同步
+        - 📦 包管理器 (APT/YUM/Conda/PIP 等)
+        - 🤖 API 接口
+        - 🌍 CDN / 边缘节点
+    validations:
+      required: true
+
+  - type: input
+    id: public-ip
+    attributes:
+      label: 您的公网 IP 地址
+      description: 请提供发起请求的出口 IP（可通过 ip.sb 或 ifconfig.me 查询）
+      placeholder: 例: 203.0.113.45
+    validations:
+      required: true
+
+  - type: textarea
+    id: block-time
+    attributes:
+      label: 发生时间 & 错误信息
+      description: 请提供首次被封/限速的时间（精确到小时）及返回的状态码/提示信息
+      placeholder: |
+        示例：
+        时间：2023-10-25 14:30 (UTC+8)
+        错误：HTTP 429 Too Many Requests / RSYNC connection refused / WAF Challenge
+        持续：约 30 分钟
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage-context
+    attributes:
+      label: 使用场景说明
+      description: 请说明您的用途、请求频率/并发数，以及是否使用自动化工具
+      placeholder: |
+        示例：
+        - 用途：CI/CD 流水线依赖下载 / 个人开发调试 / 服务器日常更新
+        - 工具：wget / rsync / apt / 自定义脚本
+        - 频率：约 50 次/小时，单线程下载
+    validations:
+      required: true
+
+  - type: textarea
+    id: compliance
+    attributes:
+      label: 合规承诺
+      description: 请确认您的使用行为符合镜像站规范，并愿意配合调整策略
+      value: |
+        我承诺：
+        - 遵守镜像站使用条款与限速策略
+        - 不滥用服务进行商业分发或未经授权的爬取
+        - 若因高频请求触发限制，将优化客户端配置（如添加延迟、减少并发）
+        - 愿意接受维护者的建议调整访问模式
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我确认提供的 IP 地址准确无误
+        - label: 我理解维护者有权根据资源负载决定是否解封
+        - label: 我将在问题解决后更新此 Issue 状态

@@ -1,0 +1,61 @@
+name: 💬 其他事项 / 建议 / 咨询
+description: 提交功能建议、政策咨询、文档纠错、合作意向或其他未分类事项
+title: "[Other]: "
+labels: ["question", "pending"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出任何建设性意见或咨询！清晰的描述能帮助我们更快响应。
+        📌 提示：
+        - 镜像申请请使用 🪞 新镜像申请 或 🐙 GitHub Release 申请 模板
+        - 故障报告请使用 🐛 故障/问题报告 模板
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 事项分类
+      options:
+        - 💡 功能/流程优化建议
+        - 📖 文档纠错或补充
+        - ❓ 政策/规则咨询
+        - 🤝 合作/贡献意向
+        - 🔄 镜像下线/迁移申请
+        - 📢 公告反馈
+        - ❓ 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 详细说明
+      description: 请清晰描述您的需求、建议或疑问。如有具体场景或案例，请一并提供。
+      placeholder: |
+        示例：
+        - 建议在同步失败时增加自动重试通知机制
+        - 某镜像的使用文档中 rsync 路径已过时
+        - 询问企业专线接入镜像站的合规流程
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-links
+    attributes:
+      label: 相关链接或参考（选填）
+      description: 其他镜像站的做法、上游文档、现有 Issue/PR 链接等
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: 期望结果
+      description: 您希望维护团队如何处理此事项？或期望达到什么效果？
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我确认此事项不属于重复提交
+        - label: 我理解部分建议可能因资源/技术限制暂缓实施
+        - label: 我愿意参与后续讨论或测试验证
