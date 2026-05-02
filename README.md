@@ -1,3 +1,5 @@
+# SDU MIRRORS Issues
+
 <div align="center">
   <img src="https://mirrors.sdu.edu.cn/assets/logo_big-Dn2qexAM.png" 
        alt="Wonderfor Mirror Logo" 
@@ -5,10 +7,8 @@
        style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </div>
 
-# SDU MIRRORS Issues
-
-> 本仓库用于提交[山东大学镜像站](https://mirrors.sdu.edu.cn)的相关的Issue。
-### 我们欢迎包括但不限于以下内容的讨论：
+本仓库用于提交[山东大学镜像站](https://mirrors.sdu.edu.cn)的相关的Issue。
+我们欢迎包括但不限于以下内容的讨论：
 - 提交、讨论和跟踪新镜像或功能请求。
 - BUG 反馈和故障报告
 - 解封请求
