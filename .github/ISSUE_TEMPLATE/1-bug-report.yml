@@ -1,4 +1,4 @@
-name: 🐛 故障/问题报告
+name: 故障/问题报告
 description: 报告镜像同步失败、访问异常、内容缺失或校验错误等问题
 title: "[Bug]: "
 labels: ["bug", "pending"]
@@ -55,7 +55,7 @@ body:
     attributes:
       label: 涉及镜像名称
       description: 出现问题的具体镜像路径或镜像名
-      placeholder: 例: debian, ubuntu, pypi, github-release/microsoft_PowerToys
+      placeholder: "例: debian, ubuntu, pypi, github-release/microsoft_PowerToys"
     validations:
       required: true
 
@@ -92,7 +92,7 @@ body:
     attributes:
       label: 客户端环境
       description: OS、浏览器版本、同步工具及版本等
-      placeholder: 例: Ubuntu 22.04, Chrome 120
+      placeholder: "例: Ubuntu 22.04, Chrome 120"
     validations:
       required: true
       
