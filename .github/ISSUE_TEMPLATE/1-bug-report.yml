@@ -1,5 +1,5 @@
 name: 故障/问题报告
-description: 报告镜像同步失败、访问异常、内容缺失或校验错误等问题
+description: 报告镜像同步失败、访问异常、内容缺失等问题
 title: "[Bug]: "
 labels: ["bug", "pending"]
 body:
