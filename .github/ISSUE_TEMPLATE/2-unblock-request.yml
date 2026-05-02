@@ -1,5 +1,5 @@
 name: 解封/访问问题申请
-description: 申请 IP 解封、解除访问限制或咨询网络策略
+description: 申请 IP 解封、解除访问限制
 title: "[Access]: "
 labels: ["access", "pending"]
 body:
