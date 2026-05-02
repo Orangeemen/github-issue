@@ -7,10 +7,10 @@
        style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </div>
 
-本仓库用于提交[山东大学镜像站](https://mirrors.sdu.edu.cn)的相关的Issue。
+本仓库用于提交[山东大学镜像站](https://mirrors.sdu.edu.cn)的相关 Issue。
 我们欢迎包括但不限于以下内容的讨论：
 - 提交、讨论和跟踪新镜像或功能请求。
-- BUG 反馈和故障报告
+- Bug 反馈和故障报告
 - 解封请求
 - 其它与镜像站相关的事项
 
@@ -26,13 +26,13 @@
 ### 提交新镜像申请
 1. **搜索现有Issues**：确认您的申请未重复提交
 2. **阅读行为与收录规则**：[POLICY.md](./POLICY.md)
-2. **新建 Issue**：选择模板 `新镜像申请`
-3. **填写完整信息**：帮助维护者高效评估
+3. **新建 Issue**：选择模板 `新镜像申请`
+4. **填写完整信息**：帮助维护者高效评估
 
 👉 [点击此处提交新申请](../../issues/new/choose)
 
 ### 申请 GitHub Release 镜像？
-如果您的目标是托管在 GitHub 的项目 Release ，请移步wonderful-github-releases仓库：
+如果您的目标是托管在 GitHub 上的项目 Release，请移步 wonderful-github-releases 仓库：
 
 👉 [转至GitHub Release仓库](https://github.com/SDU-Mirrors/wonderful-github-releases)
 
