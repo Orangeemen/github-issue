@@ -1,3 +1,10 @@
+<div align="center">
+  <img src="https://mirrors.sdu.edu.cn/assets/logo_big-Dn2qexAM.png" 
+       alt="Wonderfor Mirror Logo" 
+       width="256" 
+       style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+</div>
+
 # SDU MIRRORS Issues
 
 > 本仓库用于提交[山东大学镜像站](https://mirrors.sdu.edu.cn)的相关的Issue。
@@ -10,6 +17,7 @@
 ---
 
 ## 🚀 快速开始
+
 ### 安全相关反馈
 若发现镜像站相关安全问题，请勿提交Issue，请直接通过邮件（sdusda@sdu.edu.cn）与我们联系，我们会在在问题得到妥善解决后通过 GitHub issue 披露相关情况。
 
@@ -22,6 +30,7 @@
 
 ### 申请 GitHub Release 镜像？
 如果您的目标是托管在 GitHub 的项目 Release 资产，请移步wonderful-github-releases仓库：
+
 👉 [提交 GitHub Release 申请](https://github.com/SDU-Mirrors/wonderful-github-release)
 
 ---
